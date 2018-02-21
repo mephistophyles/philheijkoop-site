@@ -3,16 +3,16 @@ from django.shortcuts import render
 
 
 def home(request):
-    return HttpResponse("Hello world")
+    return render(request, 'templates/home.html', {})
 
 
-def index(request):
-    return HttpResponse("List of blog posts")
+def blogs(request):
+    return render(request, 'templates/blogs.html', {})
 
 
 def projects(request):
-    return HttpResponse("Project page")
+    return render(request, 'templates/projects.html', {})
 
 
 def writing(request):
-    return HttpResponse("Writing page")
+    return render(request, "templates/403.html", {})
