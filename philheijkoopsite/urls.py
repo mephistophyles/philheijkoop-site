@@ -23,4 +23,7 @@ urlpatterns = [
     path('grappelli/', include('grappelli.urls')),
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
+    path('blog/', views.index, name='index'),
+    path('projects/', views.projects, name='projects'),
+    path('writing/', views.writing, name='writing'),
 ]
