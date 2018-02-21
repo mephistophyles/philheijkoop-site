@@ -23,9 +23,11 @@
           <li class="nav-item">
             <a class="nav-link" href="/projects">Projects</a>
           </li>
-
           <li class="nav-item">
             <a class="nav-link disabled" href="#">Writing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -34,7 +36,27 @@
         </form>
       </div>
     </nav>
-    {% block content %} {% endblock content %}
 
+    <div class="content">{% block content %} {% endblock content %}</div>
+
+    <footer class="footer">
+        <a href="mailto:philip.heijkoop@gmail.com">
+            <i class="svg-icon email"></i>
+        </a>
+        <a href="https://github.com/mephistophyles">
+            <i class="svg-icon github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/philipheijkoop">
+            <i class="svg-icon linkedin"></i>
+        </a>
+        <a href="https://stackoverflow.com/users/1680476/mephistophyles">
+            <i class="svg-icon stackoverflow"></i>
+        </a>
+        <a href="https://plus.google.com/u/0/+PhilipHeijkoop">
+            <i class="svg-icon googleplus"></i>
+        </a>
+        <br>
+        &copy; Phil Heijkoop 2018
+    </footer>
 </body>
 </html>
