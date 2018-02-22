@@ -16,3 +16,6 @@ def projects(request):
 
 def writing(request):
     return render(request, "templates/403.html", {})
+
+def about(request):
+    return render(request, "templates/about.html", {})
