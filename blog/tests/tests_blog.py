@@ -2,16 +2,15 @@ from django.test import TestCase
 from django.urls import resolve, reverse
 from django.utils import timezone
 
-from ..models import Post
-from ..views import home, projects, blog, writing
+from ..models import BlogPost
+from ..views import home, projects, blogs, writing
 
 
 class BlogTests(TestCase):
     def setUp(self):
-        self.post = Post.objects.create(author='test_author',
-                                        title='test_title',
+        self.post = BlogPost.objects.create(title='test_title',
                                         text='test_text',
-                                        published_date=timezone.now())
+                                        originally_published_date=timezone.now())
         url = reverse('home')
         self.response = self.client.get(url)
 

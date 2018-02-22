@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-<p>This should show you a list of my blog posts</p>
+My blog posts:
+<ul>
+    {% for post in blogposts %}
+    <li>{{post.title}}</li>
+    {% endfor %}
+</ul>
 {% endblock content %}
