@@ -18,12 +18,15 @@ from django.contrib import admin
 from django.urls import path
 
 from blog import views
+from blog.models import BlogPost
+from blog.views import BlogPostDetailView, BlogPostListView
 
 urlpatterns = [
     path('grappelli/', include('grappelli.urls')),
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('blogs/', views.blogs, name='blogs'),
+    path('blog/', BlogPostListView.as_view(model=BlogPost, paginate_by=7, context_object_name="blog_post"), name='blog_post'),
+    path('blog/<slug:slug>/', BlogPostDetailView.as_view(model=BlogPost, context_object_name="blog_post"), name='blog_post'),
     path('projects/', views.projects, name='projects'),
     path('writing/', views.writing, name='writing'),
     path('about/', views.about, name='about'),
