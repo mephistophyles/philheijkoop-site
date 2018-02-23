@@ -2,4 +2,4 @@
 {% load markdown_filter %}
 
 {% block title %} - {{ blog_post.title }} {% endblock title %}
-{% block content %} {{ blog_post.text.markdownify|safe }} {% endblock content %}
+{% block content %} {{ blog_post.text|markdownify|safe }} {% endblock content %}
