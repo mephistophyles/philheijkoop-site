@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 import os
 
 import dotenv
+import dj_database_url
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -79,6 +80,8 @@ WSGI_APPLICATION = 'philheijkoopsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+db_from_env = dj_database_url.config()
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -86,6 +89,8 @@ DATABASES = {
         'USER': os.environ.get("DATABASE_USER"),
     }
 }
+
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
