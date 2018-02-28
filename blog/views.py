@@ -2,7 +2,7 @@ from django.http import HttpResponse, Http404
 from django.shortcuts import render
 from django.views.generic import DetailView, ListView
 
-from .models import BlogPost, Tag
+from .models import BlogPost, Tag, Project
 
 
 class BlogPostListView(ListView):
@@ -16,7 +16,6 @@ class BlogPostListView(ListView):
 
 
 class BlogPostDetailView(DetailView):
-# TODO we need to enable the correct context variable here to pass the information corresponding to the correct blog_post object, probably needs to be passed both here and in the urls (via the slug)
     model = BlogPost
     template_name = 'blog/blogpost_detail.html'
 
@@ -33,6 +32,17 @@ class TagDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['tag'] = self.tag
+        return context
+
+
+class ProjectListView(ListView):
+
+    model = Project
+    template_name = 'projects.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['projects'] = Project.objects.all()
         return context
 
 

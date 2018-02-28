@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block title %} - blog list {% endblock title %}
 {% block content %}
-My blog posts:
+<h2>My blog posts:</h2>
 <ul>
     {% for post in blog_posts %}
     <li><a href="{{ post.get_absolute_url }}">{{post.title}}</a></li>

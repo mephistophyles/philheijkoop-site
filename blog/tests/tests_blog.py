@@ -3,7 +3,7 @@ from django.urls import resolve, reverse
 from django.utils import timezone
 
 from ..models import BlogPost
-from ..views import home, projects, blogs, writing
+from ..views import home, BlogPostDetailView, BlogPostListView
 
 
 class BlogTests(TestCase):

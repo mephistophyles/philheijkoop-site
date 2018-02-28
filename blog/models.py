@@ -57,5 +57,8 @@ class Project(models.Model):
         self.originally_published_date = date
         self.save
 
+    def get_tags(self):
+        return ",\t".join([str(t) for t in self.tags.all()])
+
     def __unicode__(self):
         return self.title

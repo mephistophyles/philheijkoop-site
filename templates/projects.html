@@ -1,4 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
-<h3>This will be a curated list of my projects</h3>
+<h2>This is a curated list of my projects</h2>
+{% for project in projects %}
+    <a href="{{ project.link }}"><h4>{{project.title}}</h4></a>
+    <p>{{ project.description }}</p>
+{% endfor %}
 {% endblock content %}
