@@ -27,9 +27,9 @@ dotenv.read_dotenv(BASE_DIR)
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost', '0.0.0.0', 'desolate-plains-37349.herokuapp.com']
 
 
 # Application definition
@@ -82,11 +82,8 @@ WSGI_APPLICATION = 'philheijkoopsite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get("DATABASE_NAME"), #os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.environ.get("DATABASE_NAME"),
         'USER': os.environ.get("DATABASE_USER"),
-        #'PASSWORD': '',
-        #'HOST': 'localhost',
-        #'POST': '',
     }
 }
 
