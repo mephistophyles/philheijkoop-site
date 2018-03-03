@@ -28,10 +28,10 @@ dotenv.read_dotenv(BASE_DIR)
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '0.0.0.0', 'desolate-plains-37349.herokuapp.com']
-
+# ALLOWED_HOSTS = ['localhost', '0.0.0.0', 'desolate-plains-37349.herokuapp.com']
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'philheijkoopsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-db_from_env = dj_database_url.config()
+# db_from_env = dj_database_url.config()
 
 DATABASES = {
     'default': {
@@ -90,7 +90,7 @@ DATABASES = {
     }
 }
 
-DATABASES['default'].update(db_from_env)
+# DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -131,4 +131,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
