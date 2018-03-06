@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 import os
 
 import dotenv
-import dj_database_url
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -28,9 +27,9 @@ dotenv.read_dotenv(BASE_DIR)
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["*",
+ALLOWED_HOSTS = ["localhost",
                  'desolate-plains-37349.herokuapp.com',
                  "http://philheijkoopsite-dev.us-east-1.elasticbeanstalk.com/",
                  "https://philheijkoop.com"]
@@ -147,6 +146,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
+    '/opt/python/current/philheijkoopsite/static',
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, "..", "www", "static")

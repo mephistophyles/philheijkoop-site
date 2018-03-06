@@ -22,8 +22,8 @@ class BlogPost(models.Model):
 
     class Meta:
         # db_table = 'blog_post'
-        ordering = ('originally_published_date',)
-        get_latest_by = 'originally_published_date'
+        ordering = ('-originally_published_date',)
+        get_latest_by = '-originally_published_date'
 
     def publish(self, date=None):
         if date is None:
@@ -50,6 +50,7 @@ class Project(models.Model):
 
     class Meta:
         db_table = 'project'
+        ordering = ['-originally_published_date',]
 
     def publish(self, date=None):
         if date is None:
