@@ -12,14 +12,14 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 
-import dotenv
-import dj_database_url
+# import dotenv
+# import dj_database_url
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-dotenv.read_dotenv(BASE_DIR)
+# dotenv.read_dotenv(BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -28,10 +28,12 @@ dotenv.read_dotenv(BASE_DIR)
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-# ALLOWED_HOSTS = ['localhost', '0.0.0.0', 'desolate-plains-37349.herokuapp.com']
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['desolate-plains-37349.herokuapp.com',
+                 "http://philheijkoopsite-dev.us-east-1.elasticbeanstalk.com/",
+                 "https://philheijkoop.com"]
+# ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
